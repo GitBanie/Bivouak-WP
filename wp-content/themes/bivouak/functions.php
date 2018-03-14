@@ -159,3 +159,24 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Add custom post type stage
+ */
+  require get_template_directory() . '/types/bivouak_stage.php';
+
+ /**
+  * Add custom post type survivant
+  */
+  require get_template_directory() . '/types/bivouak_survivant.php';
+
+	/**
+	 * Add taxonomy for the custom post type stage
+	 */
+
+	require get_template_directory() . '/types/bivouak_taxonomy.php';
+
+	/**
+	 * Register google API key
+	 */
+
+	require get_template_directory() . '/inc/bivouak_maps.php';
