@@ -120,7 +120,12 @@ add_action( 'widgets_init', 'bivouak_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bivouak_scripts() {
-	wp_enqueue_style( 'bivouak-style', get_stylesheet_uri() );
+
+	//Ajout du css
+	wp_enqueue_style( 'bivouak-style', get_template_directory_uri() . '/dist/css/app.css' );
+
+	//Ajout du js
+	wp_enqueue_script( 'bivouak-script', get_template_directory_uri() . '/dist/js/app.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bivouak-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

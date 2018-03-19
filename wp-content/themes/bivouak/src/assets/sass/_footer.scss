@@ -1,0 +1,53 @@
+.bg-feu{
+  background: url('../img/bg/end-page.jpg') no-repeat center;
+  background-size: cover;
+  height: 46rem;
+  position: relative;
+}
+.filter-footer{
+  background: url('../img/bg/filter-footer.png') no-repeat center;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  height: 8rem;
+}
+
+footer#master-footer{
+  background-color: $color-bg-footer;
+
+  nav ul li a{
+    color: white;
+  }
+
+  .bivoik-logo, .yakaygo-logo{
+    text-align: center;
+    // text-align: end;
+  }
+  .bivoik, .yakaygo{
+    @media screen and (min-width: 576px) {
+      text-align: center;
+    }
+  }
+
+  .by{
+    color: #c6c6c6;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    display: none;
+    @media screen and (min-width: 767px) {
+      display: block;
+    }
+  }
+  .reseaux ul{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    a:hover{
+      color: $color-bg-btn-danger;
+    }
+  }
+
+
+
+}

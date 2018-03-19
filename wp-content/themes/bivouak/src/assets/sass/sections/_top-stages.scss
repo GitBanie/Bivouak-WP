@@ -1,0 +1,12 @@
+section.top-stages{
+
+  .top-stages-title{
+    text-align: right;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+  }
+
+}

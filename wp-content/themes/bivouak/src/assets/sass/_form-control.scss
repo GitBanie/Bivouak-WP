@@ -1,0 +1,31 @@
+
+.i-group{
+  position: relative;
+  padding: 0;
+  input, select{
+    padding-left: 40px;
+  }
+  select{
+    appearance: none;
+    cursor: pointer;
+  }
+  .i{
+    position: absolute;
+    left: 7%;
+    top: 20%;
+    color: #636561;
+  }
+  .angle-down{
+    position: absolute;
+    right: 7%;
+    top: 20%;
+    color: #636561;
+  }
+}
+
+
+// .search input, .search select{
+//   &:focus{
+//     box-shadow: none;
+//   }
+// }
