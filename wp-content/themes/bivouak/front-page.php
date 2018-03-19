@@ -63,6 +63,12 @@
               </ul>
             </div>
           </nav><!-- /navigation -->
+					<?php
+					// wp_nav_menu( array(
+					// 	'theme_location' => 'menu-1',
+					// 	'menu_id'        => 'primary-menu',
+					// ) );
+					 ?>
         </div><!-- /site-branding -->
 
         <div class="site-title">
@@ -199,368 +205,202 @@
 
     <section class="themes container">
       <h1>Themes</h1>
-
       <div class="row">
-        <div class="col-6 col-lg">
-          <a href="">
-            <figure class="figure">
-              <img src="<?php echo get_template_directory_uri() ;?>/dist/img/themes/bushcraft.png" class="figure-img img-fluid" alt="Bushcraft">
-              <figcaption class="figure-caption">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/bushcraft.svg"/>
-                <p>Bushcraft</p>
-              </figcaption>
-              <div class="show">
-                <a href="" class="btn btn-danger">Voir plus</a>
-              </div>
-            </figure>
-          </a>
-        </div>
-        <div class="col-6 col-lg">
-          <a href="">
-            <figure class="figure">
-              <img src="<?php echo get_template_directory_uri() ;?>/dist/img/themes/peche.png" class="figure-img img-fluid" alt="Pêche Ceuillette">
-              <figcaption class="figure-caption">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/peche.svg"/>
-                <p>Pêche Ceuillette</p>
-              </figcaption>
-              <div class="show">
-                <a href="" class="btn btn-danger">Voir plus</a>
-              </div>
-            </figure>
-          </a>
-        </div>
-        <div class="col-6 col-lg">
-          <a href="">
-            <figure class="figure">
-              <img src="<?php echo get_template_directory_uri() ;?>/dist/img/themes/decouverte.png" class="figure-img img-fluid" alt="Journée découverte">
-              <figcaption class="figure-caption">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/boussole.svg"/>
-                <p>Journée découverte</p>
-              </figcaption>
-              <div class="show">
-                <a href="" class="btn btn-danger">Voir plus</a>
-              </div>
-            </figure>
-          </a>
-        </div>
-        <div class="col-6 col-lg">
-          <a href="">
-            <figure class="figure">
-              <img src="<?php echo get_template_directory_uri() ;?>/dist/img/themes/intensif-nature.png" class="figure-img img-fluid" alt="Intensif nature">
-              <figcaption class="figure-caption">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/hachette.svg"/>
-                <p>Intensif nature</p>
-              </figcaption>
-              <div class="show">
-                <a href="" class="btn btn-danger">Voir plus</a>
-              </div>
-            </figure>
-          </a>
-        </div>
+				<?php if( null !== (get_terms('genre'))) : ?>
+				<?php foreach (get_terms('genre') as $cat) : ?>
+					<div class="col-6 col-lg-3">
+						<a href="<?php echo get_term_link($cat->name , 'genre') ?>">
+							<figure class="figure">
+								<img src="<?php echo z_taxonomy_image_url($cat->term_id)?>" class="figure-img img-fluid" alt="Bushcraft">
+								<figcaption class="figure-caption">
+									<img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/<?php echo $cat->slug ?>.svg"/>
+									<p><?php echo $cat->name ?></p>
+								</figcaption>
+								<div class="show">
+									<a href="" class="btn btn-danger">Voir plus</a>
+								</div>
+							</figure>
+						</a>
+					</div>
+				<?php endforeach; ?>
+				<?php else: ?>
+					<p>Aucun genre</p>
+			  <?php endif; ?>
+
+
       </div><!-- /row -->
-
-      <div class="row">
-        <div class="col-6 col-lg">
-          <a href="">
-            <figure class="figure">
-              <img src="<?php echo get_template_directory_uri() ;?>/dist/img/themes/intensif-urbain.png" class="figure-img img-fluid" alt="Intensif urbain">
-              <figcaption class="figure-caption">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/urbain.svg"/>
-                <p>Intensif urbain</p>
-              </figcaption>
-              <div class="show">
-                <a href="" class="btn btn-danger">Voir plus</a>
-              </div>
-            </figure>
-          </a>
-        </div>
-        <div class="col-6 col-lg">
-          <a href="">
-            <figure class="figure">
-              <img src="<?php echo get_template_directory_uri() ;?>/dist/img/themes/grand-froid.png" class="figure-img img-fluid" alt="Grand froid">
-              <figcaption class="figure-caption">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/feux.svg"/>
-                <p>Grand froid</p>
-              </figcaption>
-              <div class="show">
-                <a href="" class="btn btn-danger">Voir plus</a>
-              </div>
-            </figure>
-          </a>
-        </div>
-        <div class="col-6 col-lg">
-          <a href="">
-            <figure class="figure">
-              <img src="<?php echo get_template_directory_uri() ;?>/dist/img/themes/jungle.png" class="figure-img img-fluid" alt="Jungle">
-              <figcaption class="figure-caption">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/couteau.svg"/>
-                <p>Jungle</p>
-              </figcaption>
-              <div class="show">
-                <a href="" class="btn btn-danger">Voir plus</a>
-              </div>
-            </figure>
-          </a>
-        </div>
-        <div class="col-6 col-lg">
-          <a href="">
-            <figure class="figure">
-              <img src="<?php echo get_template_directory_uri() ;?>/dist/img/themes/desert.png" class="figure-img img-fluid" alt="Desert">
-              <figcaption class="figure-caption">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/gourde.svg"/>
-                <p>Desert</p>
-              </figcaption>
-              <div class="show">
-                <a href="" class="btn btn-danger">Voir plus</a>
-              </div>
-            </figure>
-          </a>
-        </div>
-      </div>
     </section><!-- themes -->
 
     <section class="top-stages container">
       <h1 class="top-stages-title" >Top stages</h1>
       <div class="row">
-        <div class="col-12 col-md-6 col-lg pb-5">
-          <article class="card">
-            <a href="">
-              <div class="card-img">
-                <img class="card-img-top img-fluid" src="<?php echo get_template_directory_uri() ;?>/dist/img/stages/decompression.png" alt="Image card decompression">
-                <div class="description-card-top">
-                  <div class="description-card-top-category">
-                    <div>
-                      <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/boussole.svg">
-                    </div>
-                    <div>
-                      <p>
-                        <span>Journée</span>
-                        <span>découverte</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="price-per-person">
-                    <p>
-                      <span class="price">150 €</span>
-                      <span class="person">/ personne</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="card-survivant">
-                  <figure class="figure">
-                    <img src="<?php echo get_template_directory_uri() ;?>/dist/img/stages/john.jpg" class="figure-img img-fluid" alt="Prestataire">
-                    <figcaption class="figure-caption">John</figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title">Décompression Comité d'Entreprise</h1>
-                <div class="rating">
-                    <ul>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="far fa-star"></i></li>
-                    </ul>
-                    <span class="text-muted"> 43 avis</span>
-                </div>
-                <div class="card-text">
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-map-marker-alt"></i>  La Motte-Tilly</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-stopwatch"></i>  1 Jours</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-users"></i> Groupe</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-signal"></i> Débutant</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <footer class="card-footer">
-                <small>Voir le stage</small>
-              </footer>
-            </a>
-          </article><!-- /card -->
-        </div>
+				<?php
+				// The Query
+				$args = array(
+											'post_type' => 'stage',
+											'post_status' => 'publish',
+											'posts_per_page'=>3,
+											'orderby'=>'ID',
+											'order'=>'ASC',
+											);
 
-        <div class="col-12 col-md-6 col-lg pb-5">
-          <article class="card">
-            <a href="">
-              <div class="card-img">
-                <img class="card-img-top" src="<?php echo get_template_directory_uri() ;?>/dist/img/stages/ecole-du-petit-debrouillard.png" alt="Card image ecole du petit debrouillard">
-                <div class="description-card-top">
-                  <div class="description-card-top-category">
-                    <div>
-                      <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/boussole.svg">
-                    </div>
-                    <div>
-                      <p>
-                        <span>Journée</span>
-                        <span>découverte</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="price-per-person">
-                    <p>
-                      <span class="price">150 €</span>
-                      <span class="person">/ personne</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="card-survivant">
-                  <figure class="figure">
-                    <img src="<?php echo get_template_directory_uri() ;?>/dist/img/stages/john.jpg" class="figure-img img-fluid" alt="Prestataire">
-                    <figcaption class="figure-caption">John</figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title">Ecole du petit débrouillard</h1>
-                <div class="rating">
-                    <ul>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="far fa-star"></i></li>
-                    </ul>
-                    <span class="text-muted"> 43 avis</span>
-                </div>
-                <div class="card-text">
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-map-marker-alt"></i>  Sénard</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-stopwatch"></i>  2 Jours</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-users"></i> Groupe</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-signal"></i> Débutant</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <footer class="card-footer">
-                <small>Voir le stage</small>
-              </footer>
-            </a>
-          </article><!-- /card -->
-        </div>
+				$the_query = new WP_Query( $args );
+				?>
 
-        <div class="col-12 col-md-6 m-auto col-lg pb-5">
-          <article class="card">
-            <a href="">
-              <div class="card-img">
-                <img class="card-img-top" src="<?php echo get_template_directory_uri() ;?>/dist/img/stages/boot-camp.png" alt="Card image boot camp">
-                <div class="description-card-top">
-                  <div class="description-card-top-category">
-                    <div>
-                      <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/hachette.svg">
-                    </div>
-                    <div>
-                      <p>
-                        <span>intensif</span>
-                        <span>nature</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="price-per-person">
-                    <p>
-                      <span class="price">170 €</span>
-                      <span class="person">/ personne</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="card-survivant">
-                  <figure class="figure">
-                    <img src="<?php echo get_template_directory_uri() ;?>/dist/img/stages/denis.png" class="figure-img img-fluid" alt="Prestataire">
-                    <figcaption class="figure-caption">Denis</figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title">Boot camp dans l'Aube 10</h1>
-                <div class="rating">
-                    <ul>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="far fa-star"></i></li>
-                    </ul>
-                    <span class="text-muted"> 43 avis</span>
-                </div>
-                <div class="card-text">
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-map-marker-alt"></i>  La Motte-Tilly</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-stopwatch"></i>  2 Jours</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-users"></i> Groupe</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span><i class="fas fa-signal"></i> Confirmé</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <footer class="card-footer">
-                <small>Voir le stage</small>
-              </footer>
-            </a>
-          </article><!-- /card -->
-        </div>
+				<?php if ($the_query->have_posts()) : ?>
+
+					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+						<div class="col-12 col-md-6 m-auto col-lg pb-5">
+		          <article class="card">
+		            <a href="<?php the_permalink()?>">
+		              <div class="card-img">
+
+										<?php
+										$image = get_field('img-stage');
+
+										if( !empty($image) ): ?>
+
+											<img class="card-img-top" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+										<?php endif; ?>
+
+		                <div class="description-card-top">
+		                  <div class="description-card-top-category">
+		                    <div>
+		                      <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/hachette.svg">
+		                    </div>
+		                    <div>
+		                      <p>
+		                        <span>intensif</span>
+		                        <span>nature</span>
+		                      </p>
+		                    </div>
+		                  </div>
+		                  <div class="price-per-person">
+		                    <p>
+		                      <span class="price">
+														<?php $price = get_field_object("price") ?>
+														<?php echo $price['value'] .' ' . $price['append'] ?>
+													</span>
+		                      <span class="person">/ personne</span>
+		                    </p>
+		                  </div>
+		                </div>
+		                <div class="card-survivant">
+
+		                  <figure class="figure">
+		                    <img src="<?php echo get_template_directory_uri() ;?>/dist/img/stages/denis.png" class="figure-img img-fluid" alt="Prestataire">
+		                    <figcaption class="figure-caption">Denis</figcaption>
+		                  </figure>
+		                </div>
+		              </div>
+		              <div class="card-body">
+		                <h1 class="card-title"><?php the_title() ?></h1>
+		                <div class="rating">
+		                    <ul>
+		                      <li><i class="fas fa-star"></i></li>
+		                      <li><i class="fas fa-star"></i></li>
+		                      <li><i class="fas fa-star"></i></li>
+		                      <li><i class="fas fa-star"></i></li>
+		                      <li><i class="far fa-star"></i></li>
+		                    </ul>
+		                    <span class="text-muted"> 43 avis</span>
+		                </div>
+		                <div class="card-text">
+		                  <div class="row">
+		                    <div class="col">
+		                      <span>
+														<i class="fas fa-map-marker-alt"></i>
+														<?php $location = get_field('place');  ?>
+														<?php echo $location['address']; ?>
+													</span>
+		                    </div>
+		                  </div>
+		                  <div class="row">
+		                    <div class="col">
+		                      <span>
+														<i class="fas fa-stopwatch"></i>
+														<?php $duration = get_field_object("duration") ?>
+														<?php echo $duration['value'] .' ' . $duration['append'] ?>
+													 </span>
+		                    </div>
+		                  </div>
+		                  <div class="row">
+		                    <div class="col">
+		                      <span>
+														<i class="fas fa-users"></i>
+														<?php $numberPerson = get_field_object("number-person") ?>
+														<?php echo $numberPerson['value'] .' ' . 				  			  		 ucfirst($numberPerson['append']) ?>
+													</span>
+		                    </div>
+		                  </div>
+		                  <div class="row">
+		                    <div class="col">
+		                      <span>
+														<i class="fas fa-signal"></i>
+														 <?php echo ucfirst(get_field('lvl')) ?>
+													 </span>
+		                    </div>
+		                  </div>
+		                </div>
+		              </div>
+		              <footer class="card-footer">
+		                <small>Voir le stage</small>
+		              </footer>
+		            </a>
+		          </article><!-- /card -->
+		        </div>
+
+					<?php endwhile; ?>
+					<?php else : ?>
+						<p>Aucun stage trouver</p>
+				<?php endif; ?>
+				<?php wp_reset_postdata(); ?>
+
       </div><!-- /card-group -->
     </section><!-- /top-stages -->
 
     <section class="blog container">
-      <h1>Blog</h1>
-      <article class="row">
-        <div class="col-12 order-12 col-md order-md-1">
-          <h1>Comment rendre son abris imperméable ?</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut saepe asperiores exercitationem obcaecati repudiandae cupiditate, autem. Quia amet adipisci inventore, nostrum, unde porro necessitatibus temporibus perspiciatis labore praesentium fugit ex.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam provident quod illo qui eaque nulla recusandae alias! Magni possimus voluptatibus non laboriosam ipsa sunt modi, perspiciatis, tenetur id <?php echo get_template_directory_uri() ;?>/distinctio recusandae. <a href="#" class="text-danger">Lire la suite</a></p>
-          <div class="link">
-            <a href="#" class="btn btn-danger">Consulter le blog</a>
-          </div>
-        </div>
-        <div class="blog-img col-12 order-1 col-md order-md-12">
-          <a href="">
-            <img src="<?php echo get_template_directory_uri() ;?>/dist/img/blog/img-blog.png" alt="Stagiaire essayant de rendre son abri imperméable" title="Stagiaire essayant de rendre son abri imperméable" class="img-fluid">
-            <!-- <img src="<?php echo get_template_directory_uri() ;?>/dist/img/blog/img-blog-2.png" alt="Construire son abris" title="Construire son abris" class="img-fluid"> -->
-          </a>
-        </div>
-      </article>
+      <h1><?php echo get_the_title(get_page_by_title( 'Blog' )); ?></h1>
+			<?php
+			// The Query
+			$args = array(
+										'post_type' => 'post',
+										'post_status' => 'publish',
+										'posts_per_page'=>1,
+										'orderby'=>'ID',
+										'order'=>'DESC',
+										);
+
+			$the_query = new WP_Query( $args );
+			?>
+
+				<!-- the loop -->
+				<?php if ($the_query->have_posts()) : ?>
+
+					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+						<?php // Individual Post Styling ?>
+						<article class="row">
+							<div class="col-12 order-12 col-md order-md-1">
+								<h1><?php the_title() ?></h1>
+								<p><?php the_excerpt()?></p>
+								<div class="link">
+									<a href="<?php echo get_permalink( get_page_by_title( 'Blog' ) ) ?>" class="btn btn-danger">Consulter le blog</a>
+								</div>
+							</div>
+							<div class="blog-img col-12 order-1 col-md order-md-12 text-center">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail('post-thumbnail', array( 'class' => "img-fluid")); ?>
+								</a>
+							</div>
+						</article>
+
+					<?php endwhile; ?>
+					<?php else : ?>
+						<p>Aucun article trouver</p>
+				<?php endif; ?>
+				<?php wp_reset_postdata(); ?>
+
     </section><!-- /blog -->
 
     <div class="bg-feu">

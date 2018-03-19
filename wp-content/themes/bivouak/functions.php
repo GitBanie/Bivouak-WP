@@ -165,6 +165,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * Custom functions
+ */
+
+ require get_template_directory() . '/inc/bivouak_functions.php';
+
+/**
  * Add custom post type stage
  */
   require get_template_directory() . '/types/bivouak_stage.php';
@@ -172,7 +178,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  /**
   * Add custom post type survivant
   */
-  require get_template_directory() . '/types/bivouak_survivant.php';
+  require get_template_directory() . '/types/bivouak_moniteur.php';
 
 	/**
 	 * Add taxonomy for the custom post type stage
