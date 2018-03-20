@@ -226,6 +226,9 @@
 				<?php if ($the_query->have_posts()) : ?>
 
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+            <?php $id_post_origine = get_the_ID(); //For reset the post object ?>
+
 						<div class="col-12 col-md-6 m-auto col-lg pb-5">
 		          <article class="card">
 		            <a href="<?php the_permalink()?>">
@@ -263,11 +266,21 @@
 		                  </div>
 		                </div>
 		                <div class="card-survivant">
+                      <?php
+                      $post_object = get_field('monitor');
+                      if( $post_object ):
+                      	// override $post
+                      	$post = $post_object;
+                      	setup_postdata( $post );
+                      	?>
+                        <figure class="figure">
+                          <?php $image = get_field('img_monitor');  ?>
+                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+  		                    <figcaption class="figure-caption"><?php the_title() ?></figcaption>
+  		                  </figure>
 
-		                  <figure class="figure">
-		                    <img src="<?php echo get_template_directory_uri() ;?>/dist/img/stages/denis.png" class="figure-img img-fluid" alt="Prestataire">
-		                    <figcaption class="figure-caption">Denis</figcaption>
-		                  </figure>
+                      <?php $post = $id_post_origine; setup_postdata( $post ); //reset post object ?>
+                      <?php endif; ?>
 		                </div>
 		              </div>
 		              <div class="card-body">
