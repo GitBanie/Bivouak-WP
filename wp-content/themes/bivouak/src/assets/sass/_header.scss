@@ -1,13 +1,29 @@
 
 
 header#master-header{
-  background: url('../img/bg/bg-header.jpg') no-repeat center fixed;
+  background: url('../img/bg/bg-header.jpg') no-repeat center;
   background-size: cover;
   color: $color-header;
   text-align: center;
   margin-left:auto;
   margin-right:auto;
   position: relative;
+
+  .bg-site-branding.container-fluid{
+    // background: rgba(0,0,0,.6);
+    // filter: grayscale(100%);
+  }
+  .site-navigation{
+      position: relative;
+      .tel{
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1rem;
+        a{
+          color: #ebc78f;
+        }
+      }
+  }
 
   .header-logo {
       display: flex;
@@ -19,10 +35,6 @@ header#master-header{
     img, span{
       height: 1rem;
     }
-  }
-
-  .mainNav{
-    justify-content: center;
   }
 
   #navbarNav{
@@ -95,5 +107,4 @@ header#master-header{
     color: white;
     border: 0;
   }
-
 }

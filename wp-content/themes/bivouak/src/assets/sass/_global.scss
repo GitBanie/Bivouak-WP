@@ -18,6 +18,12 @@ h1{
    }
   }
 
+  .niveaux, .themes, .top-stages, .blog{
+    h1{
+      letter-spacing: 0.5rem;
+    }
+  }
+
 .cRetour{
   position: fixed;
   bottom: 3rem;

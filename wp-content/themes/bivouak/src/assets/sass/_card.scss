@@ -1,8 +1,7 @@
 article.card{
 
   border: 2px solid $color-bg-btn-danger !important;
-  border-top-left-radius: 0.6rem;
-  border-top-right-radius: 0.6rem;
+  border-radius: 0.6rem;
 
   &:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
@@ -14,6 +13,7 @@ article.card{
     font-size: 1.56rem;
     color:$color-bg-btn-danger;
     font-weight: 800;
+    letter-spacing: normal;
   }
 
   a:hover{
@@ -106,6 +106,8 @@ article.card{
   .card-footer{
     background-color: $color-bg-btn-danger;
     text-align: center;
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
     small{
       color: white;
       font-weight: 700;

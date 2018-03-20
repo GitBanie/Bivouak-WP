@@ -1,14 +1,14 @@
 section.themes{
   figure{
     position: relative;
-    margin: 0 -0.8rem 1rem;
+    margin: 0 -0.8rem -0.3rem;
     filter: grayscale(0);
     transition: 0s ease-in-out;
     &:hover{
-      filter: grayscale(100%);
+      // filter: grayscale(100%);
     }
     .btn-danger:hover {
-      background-color: #636162;
+      // background-color: #636162;
     }
     figcaption{
       position: absolute;

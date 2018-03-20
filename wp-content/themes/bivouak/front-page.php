@@ -16,36 +16,44 @@
 <body>
   <div class="wrapper">
     <header class="container-fluid" id="master-header">
-      <div class="container">
-        <div class="site-branding">
-
-          <nav class="site-navigation navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="<?php echo home_url() ?>">
-              <div class="header-logo">
-                <img src="<?php echo get_template_directory_uri() ;?>/dist/img/logos/bivoik.svg" alt="logo bivoik">
-                <div class="by-Yakaygo">
-                  <span>by</span>
-                  <img src="<?php echo get_template_directory_uri() ;?>/dist/img/logos/yakaygo.svg" alt="logo yakaygo">
+      <div class="bg-site-branding container-fluid">
+        <div class="container">
+          <div class="site-branding">
+            <nav class="site-navigation navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="<?php echo home_url() ?>">
+                <div class="header-logo">
+                  <img src="<?php echo get_template_directory_uri() ;?>/dist/img/logos/bivoik.svg" alt="logo bivoik">
+                  <div class="by-Yakaygo">
+                    <span>by</span>
+                    <img src="<?php echo get_template_directory_uri() ;?>/dist/img/logos/yakaygo.svg" alt="logo yakaygo">
+                  </div>
                 </div>
-              </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
               </button>
               <?php
-              wp_nav_menu( array(
-                  'theme_location'  => 'menu-1',
+              wp_nav_menu(array(
+                  'theme_location'  => 'menu-header',
                   'depth'           => 2,
                   'container'       => 'div',
                   'container_id'    => 'navbarNav',
                   'container_class' => 'collapse navbar-collapse',
+                  'items_wrap'      => my_nav_wrap(),
                   'menu_class'      => 'nav navbar-nav ml-auto',
                   'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                   'walker'          => new WP_Bootstrap_Navwalker()
-              ) );
+              ));
               ?>
-          </nav>
-        </div><!-- /site-branding -->
+              <div class="tel">
+                <a href="tel:09 87 67 09 61">09 87 67 09 61</a>
+              </div>
+              </nav>
+            </div><!-- /site-branding -->
+          </div><!-- /container -->
+        </div><!-- /container-fluid -->
+
+      <div class="container">
 
         <div class="site-title">
           <h1>Reveillez votre instinct de survie</h1>
@@ -55,7 +63,6 @@
 
         <div class="search">
           <form class="search-form" action="test.html" method="get">
-
             <div class="row">
               <div class="col-md i-group">
                 <input id="searchTextField" class="form-control" placeholder="Entrez un lieu" type="search" name="place">
@@ -97,7 +104,7 @@
               <div class="col-md i-group">
                 <select class="form-control" name="theme">
                   <option value="" selected="selected">Thème</option>
-									<?php if( null !== (get_terms('genre'))) : ?>
+									<?php if (null !== (get_terms('genre'))) : ?>
 									<?php foreach (get_terms('genre') as $cat) : ?>
 										<option value="<?php echo $cat->slug ?>"><?php echo $cat->name ?></option>
 									<?php endforeach; ?>
@@ -113,9 +120,7 @@
               <button type="submit" class="col-md-2 btn btn-danger">
                 <i class="fas fa-search"></i> <span>Chercher</span>
               </button>
-
             </div><!-- row -->
-
             <div class="row info">
               <div class="col">
                 <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/expert.svg" alt="logo expert">
@@ -129,7 +134,7 @@
                 <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/cadeau.svg" alt="logo expert">
                 <p>Offrez nos stages</p>
               </div>
-            </div>
+            </div><!-- /row -->
           </form>
         </div><!-- /search -->
       </div><!-- /container -->
@@ -179,21 +184,19 @@
     <section class="themes container">
       <h1>Themes</h1>
       <div class="row">
-				<?php if( null !== (get_terms('genre'))) : ?>
+				<?php if (null !== (get_terms('genre'))) : ?>
 				<?php foreach (get_terms('genre') as $cat) : ?>
 					<div class="col-6 col-lg-3">
-						<a href="<?php echo get_term_link($cat->name , 'genre') ?>">
-							<figure class="figure">
+							<figure class="figure figure-theme">
 								<img src="<?php echo z_taxonomy_image_url($cat->term_id)?>" class="figure-img img-fluid" alt="Bushcraft">
 								<figcaption class="figure-caption">
 									<img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/<?php echo $cat->slug ?>.svg"/>
 									<p><?php echo $cat->name ?></p>
 								</figcaption>
 								<div class="show">
-									<a href="" class="btn btn-danger">Voir plus</a>
+									<a href="<?php echo get_term_link($cat->name, 'genre') ?>" class="btn btn-danger">Voir plus</a>
 								</div>
 							</figure>
-						</a>
 					</div>
 				<?php endforeach; ?>
 				<?php else: ?>
@@ -208,17 +211,17 @@
       <h1 class="top-stages-title" >Top stages</h1>
       <div class="row">
 				<?php
-				// The Query
-				$args = array(
-											'post_type' => 'stage',
-											'post_status' => 'publish',
-											'posts_per_page'=>3,
-											'orderby'=>'ID',
-											'order'=>'ASC',
-											);
+                // The Query
+                $args = array(
+                                            'post_type' => 'stage',
+                                            'post_status' => 'publish',
+                                            'posts_per_page'=>3,
+                                            'orderby'=>'ID',
+                                            'order'=>'ASC',
+                                            );
 
-				$the_query = new WP_Query( $args );
-				?>
+                $the_query = new WP_Query($args);
+                ?>
 
 				<?php if ($the_query->have_posts()) : ?>
 
@@ -228,23 +231,23 @@
 		            <a href="<?php the_permalink()?>">
 		              <div class="card-img">
 										<?php
-										$image = get_field('img-stage');
-										if( !empty($image) ): ?>
+                                        $image = get_field('img-stage');
+                                        if (!empty($image)): ?>
 											<img class="card-img-top" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 										<?php endif; ?>
 		                <div class="description-card-top">
 		                  <div class="description-card-top-category">
 		                    <div>
 		                      <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/
-													<?php $term = wp_get_post_terms( $post->ID, 'genre'); ?>
-													<?php echo ($term[0]->slug) ?>
+													<?php $term = wp_get_post_terms($post->ID, 'genre'); ?>
+													<?php echo($term[0]->slug) ?>
 													.svg">
 		                    </div>
 		                    <div>
 		                      <p>
 		                        <span>
-															<?php $term = wp_get_post_terms( $post->ID, 'genre'); ?>
-															<?php echo ($term[0]->name) ?>
+															<?php $term = wp_get_post_terms($post->ID, 'genre'); ?>
+															<?php echo($term[0]->name) ?>
 													 </span>
 		                      </p>
 		                    </div>
@@ -334,31 +337,31 @@
     </section><!-- /top-stages -->
 
     <section class="blog container">
-      <h1><?php echo get_the_title(get_page_by_title( 'Blog' )); ?></h1>
+      <h1><?php echo get_the_title(get_page_by_title('Blog')); ?></h1>
 			<?php
-			// The Query
-			$args = array(
-										'post_type' => 'post',
-										'post_status' => 'publish',
-										'posts_per_page'=>1,
-										'orderby'=>'ID',
-										'order'=>'DESC',
-										);
+            // The Query
+            $args = array(
+                                        'post_type' => 'post',
+                                        'post_status' => 'publish',
+                                        'posts_per_page'=>1,
+                                        'orderby'=>'ID',
+                                        'order'=>'DESC',
+                                        );
 
-			$the_query = new WP_Query( $args );
-			?>
+            $the_query = new WP_Query($args);
+            ?>
 
 				<!-- the loop -->
 				<?php if ($the_query->have_posts()) : ?>
 
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-						<?php // Individual Post Styling ?>
+						<?php // Individual Post Styling?>
 						<article class="row">
 							<div class="col-12 order-12 col-md order-md-1">
 								<h1><?php the_title() ?></h1>
 								<p><?php the_excerpt()?></p>
 								<div class="link">
-									<a href="<?php echo get_permalink( get_page_by_title( 'Blog' ) ) ?>" class="btn btn-danger">Consulter le blog</a>
+									<a href="<?php echo get_permalink(get_page_by_title('Blog')) ?>" class="btn btn-danger">Consulter le blog</a>
 								</div>
 							</div>
 							<div class="blog-img col-12 order-1 col-md order-md-12 text-center">
@@ -394,16 +397,16 @@
         <div class="row">
           <div class="col-12 col-md bivoik">
             <div class="bivoik-logo">
-              <a href=""><img src="<?php echo get_template_directory_uri() ;?>/dist/img/logos/bivoik-black.svg" alt="Logo Bivoik" title="Bivoik"></a>
+              <a href="<?php bloginfo('url')?>"><img src="<?php echo get_template_directory_uri() ;?>/dist/img/logos/bivoik-black.svg" alt="Logo Bivoik" title="Bivoik"></a>
            </div>
-           <ul>
-             <li><a href="#">Le blog</a></li>
-             <li><a href="#">Les moniteurs</a></li>
-             <li><a href="#">Notre équipe</a></li>
-             <li><a href="#">Devenez partenaire</a></li>
-             <li><a href="#">Plan du site</a></li>
-           </ul>
+           <?php
+           wp_nav_menu(array(
+             'theme_location' => 'menu-footer-bivouak',
+           ));
+           ?>
          </div> <!-- /col -->
+
+
 
          <div class="col-md-1 by">
            <p>BY</p>
@@ -413,15 +416,11 @@
            <div class="yakaygo-logo">
              <a href=""><img src="<?php echo get_template_directory_uri() ;?>/dist/img/logos/yakaygo-black.svg" alt="Logo Yakaygo" title="Yakaygo"></a>
           </div>
-          <ul>
-            <li><a href="#">Le site</a></li>
-            <li><a href="#">Qui sommes-nous ?</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Nous contacter</a></li>
-            <li><a href="#">Les garanties</a></li>
-            <li><a href="#">Conditions générales</a></li>
-            <li><a href="#">Service entreprise et CE</a></li>
-          </ul>
+          <?php
+          wp_nav_menu(array(
+            'theme_location' => 'menu-footer-yakaygo',
+          ));
+          ?>
         </div><!-- /col -->
 
           <div class="col col-md reseaux">
@@ -433,12 +432,17 @@
               <li><a href="https://plus.google.com/u/0/113498570641769538903" target="_blank" title="Google plus"><i class="fab fa-google-plus-g"></i></a></li>
               <li><a href="https://www.linkedin.com/company/11088923/" target="_blank" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
             </ul>
+            <div class="newsletter">
+              <p>Inscrivez vous à notre Newsletter</p>
+              <div class="newsletter-content">
+                <?php get_sidebar() ?>
+              </div>
+            </div>
           </div><!-- /col -->
         </div><!-- /row -->
       </nav> <!-- /footer-navigation -->
     </footer> <!-- /master-footer -->
   </div><!-- /wrapper -->
-
 
 	<?php wp_footer() ?>
  </body>

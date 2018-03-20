@@ -11107,8 +11107,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 article.card {
 	border: 2px solid #e9511f !important;
-	border-top-left-radius: 0.6rem;
-	border-top-right-radius: 0.6rem;
+	border-radius: 0.6rem;
 }
 
 article.card:hover {
@@ -11122,6 +11121,7 @@ article.card h1 {
 	font-size: 1.56rem;
 	color: #e9511f;
 	font-weight: 800;
+	letter-spacing: normal;
 }
 
 article.card a:hover {
@@ -11252,6 +11252,8 @@ article.card .card-text {
 article.card .card-footer {
 	background-color: #e9511f;
 	text-align: center;
+	border-bottom-left-radius: 0.6rem;
+	border-bottom-right-radius: 0.6rem;
 }
 
 article.card .card-footer small {
@@ -11310,6 +11312,10 @@ h1 {
 	}
 }
 
+.niveaux h1, .themes h1, .top-stages h1, .blog h1 {
+	letter-spacing: 0.5rem;
+}
+
 .cRetour {
 	position: fixed;
 	bottom: 3rem;
@@ -11323,13 +11329,27 @@ h1 {
 }
 
 header#master-header {
-	background: url("../img/bg/bg-header.jpg") no-repeat center fixed;
+	background: url("../img/bg/bg-header.jpg") no-repeat center;
 	background-size: cover;
 	color: white;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
+}
+
+header#master-header .site-navigation {
+	position: relative;
+}
+
+header#master-header .site-navigation .tel {
+	position: absolute;
+	bottom: 1.5rem;
+	right: 1rem;
+}
+
+header#master-header .site-navigation .tel a {
+	color: #ebc78f;
 }
 
 header#master-header .header-logo {
@@ -11348,12 +11368,6 @@ header#master-header .by-Yakaygo {
 
 header#master-header .by-Yakaygo img, header#master-header .by-Yakaygo span {
 	height: 1rem;
-}
-
-header#master-header .mainNav {
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
 }
 
 header#master-header #navbarNav {
@@ -11459,7 +11473,7 @@ section.concept h1 {
 
 section.concept p {
 	font-weight: 600;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 section.niveaux {
@@ -11508,20 +11522,11 @@ section.niveaux .lvl-img .griffe {
 
 section.themes figure {
 	position: relative;
-	margin: 0 -0.8rem 1rem;
+	margin: 0 -0.8rem -0.3rem;
 	-webkit-filter: grayscale(0);
 	        filter: grayscale(0);
 	-webkit-transition: 0s ease-in-out;
 	transition: 0s ease-in-out;
-}
-
-section.themes figure:hover {
-	-webkit-filter: grayscale(100%);
-	        filter: grayscale(100%);
-}
-
-section.themes figure .btn-danger:hover {
-	background-color: #636162;
 }
 
 section.themes figure figcaption {
@@ -11606,6 +11611,7 @@ section.blog article h1 {
 	font-weight: 700;
 	font-size: 2rem;
 	padding-top: 2rem;
+	letter-spacing: normal;
 }
 
 section.blog article .link {
@@ -11615,7 +11621,7 @@ section.blog article .link {
 .bg-feu {
 	background: url("../img/bg/end-page.jpg") no-repeat center;
 	background-size: cover;
-	height: 46rem;
+	height: 1091px;
 	position: relative;
 }
 
@@ -11671,6 +11677,24 @@ footer#master-footer .reseaux ul {
 
 footer#master-footer .reseaux ul a:hover {
 	color: #e9511f;
+}
+
+footer#master-footer .newsletter {
+	padding-bottom: 2rem;
+}
+
+footer#master-footer .newsletter p {
+	color: white;
+	text-align: center;
+}
+
+footer#master-footer .newsletter .newsletter-content {
+	width: 70%;
+	margin: auto;
+}
+
+footer#master-footer .newsletter .tnp-submit {
+	background-color: #e9511f;
 }
 
 /*# sourceMappingURL=app.css.map */

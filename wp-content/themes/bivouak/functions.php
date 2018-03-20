@@ -44,7 +44,7 @@ if ( ! function_exists( 'bivouak_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'bivouak' ),
+			'menu-header' => esc_html__( 'Primary', 'bivouak' ),
 		) );
 
 		/*
@@ -105,7 +105,7 @@ add_action( 'after_setup_theme', 'bivouak_content_width', 0 );
  */
 function bivouak_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'bivouak' ),
+		'name'          => esc_html__( 'Sidebar Footer', 'bivouak' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'bivouak' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
