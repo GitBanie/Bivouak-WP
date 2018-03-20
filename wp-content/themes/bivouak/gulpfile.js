@@ -40,6 +40,7 @@ gulp.task('javascript', function() {
       'node_modules/jquery/dist/jquery.js',
       'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
        source + '/assets/js/fontawesome-all.min.js',
+       source + '/assets/js/google-autocomplete.js',
        source + '/assets/js/app.js'
     ])
     .pipe(concat('app.js'))

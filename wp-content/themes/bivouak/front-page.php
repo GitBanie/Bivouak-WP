@@ -19,9 +19,8 @@
       <div class="container">
         <div class="site-branding">
 
-          <!-- navigation -->
           <nav class="site-navigation navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?php echo home_url() ?>">
               <div class="header-logo">
                 <img src="<?php echo get_template_directory_uri() ;?>/dist/img/logos/bivoik.svg" alt="logo bivoik">
                 <div class="by-Yakaygo">
@@ -33,42 +32,19 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-            <div class="collapse navbar-collapse mainNav" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Les stages</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Les survivants</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Deposez une offre</a>
-                </li>
-                <li class="nav-item">
-                  <div class="dropdown show">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="flag-icon flag-icon-fr"></span> FR
-                          </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb"></span> EN</a>
-                    </div>
-                  </div><!-- /dropdown -->
-                </li>
-              </ul>
-            </div>
-          </nav><!-- /navigation -->
-					<?php
-					// wp_nav_menu( array(
-					// 	'theme_location' => 'menu-1',
-					// 	'menu_id'        => 'primary-menu',
-					// ) );
-					 ?>
+              <?php
+              wp_nav_menu( array(
+                  'theme_location'  => 'menu-1',
+                  'depth'           => 2,
+                  'container'       => 'div',
+                  'container_id'    => 'navbarNav',
+                  'container_class' => 'collapse navbar-collapse',
+                  'menu_class'      => 'nav navbar-nav ml-auto',
+                  'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                  'walker'          => new WP_Bootstrap_Navwalker()
+              ) );
+              ?>
+          </nav>
         </div><!-- /site-branding -->
 
         <div class="site-title">
@@ -82,7 +58,7 @@
 
             <div class="row">
               <div class="col-md i-group">
-                <input class="form-control" placeholder="Entrez un lieu" type="search" name="place">
+                <input id="searchTextField" class="form-control" placeholder="Entrez un lieu" type="search" name="place">
                 <div class="i">
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
@@ -121,14 +97,11 @@
               <div class="col-md i-group">
                 <select class="form-control" name="theme">
                   <option value="" selected="selected">Thème</option>
-                  <option value="bushcraft">Bushcraft</option>
-                  <option value="peche">Pêche ceuillete</option>
-                  <option value="decouverte">Journée découverte</option>
-                  <option value="nature">Intensif nature</option>
-                  <option value="urbain">Intensif urbain</option>
-                  <option value="froid">Grand froid</option>
-                  <option value="jungle">Jungle</option>
-                  <option value="desert">Desert</option>
+									<?php if( null !== (get_terms('genre'))) : ?>
+									<?php foreach (get_terms('genre') as $cat) : ?>
+										<option value="<?php echo $cat->slug ?>"><?php echo $cat->name ?></option>
+									<?php endforeach; ?>
+									<?php endif; ?>
                 </select>
                 <div class="i">
                   <i class="fas fa-tag"></i>
@@ -254,25 +227,25 @@
 		          <article class="card">
 		            <a href="<?php the_permalink()?>">
 		              <div class="card-img">
-
 										<?php
 										$image = get_field('img-stage');
-
 										if( !empty($image) ): ?>
-
 											<img class="card-img-top" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
 										<?php endif; ?>
-
 		                <div class="description-card-top">
 		                  <div class="description-card-top-category">
 		                    <div>
-		                      <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/hachette.svg">
+		                      <img src="<?php echo get_template_directory_uri() ;?>/dist/img/pictos/
+													<?php $term = wp_get_post_terms( $post->ID, 'genre'); ?>
+													<?php echo ($term[0]->slug) ?>
+													.svg">
 		                    </div>
 		                    <div>
 		                      <p>
-		                        <span>intensif</span>
-		                        <span>nature</span>
+		                        <span>
+															<?php $term = wp_get_post_terms( $post->ID, 'genre'); ?>
+															<?php echo ($term[0]->name) ?>
+													 </span>
 		                      </p>
 		                    </div>
 		                  </div>

@@ -124,6 +124,9 @@ function bivouak_scripts() {
 	//Ajout du css
 	wp_enqueue_style( 'bivouak-style', get_template_directory_uri() . '/dist/css/app.css' );
 
+	//JS pour autocomplete de google
+	wp_enqueue_script( 'bivouak-google-autocomplete', 'http://maps.googleapis.com/maps/api/js?key=AIzaSyDbqz4_lYYofB_qRGUi9EB_H9W0pvrF8qI&libraries=places&amp;sensor=false', array(), '20151215', true );
+
 	//Ajout du js
 	wp_enqueue_script( 'bivouak-script', get_template_directory_uri() . '/dist/js/app.js', array(), '20151215', true );
 
@@ -191,3 +194,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	 */
 
 	require get_template_directory() . '/inc/bivouak_maps.php';
+
+	/**
+	 * Register bootstrap nav
+	 */
+  require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';

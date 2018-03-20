@@ -11200,6 +11200,16 @@ article.card .card-img .description-card-top {
 	width: 100%;
 }
 
+article.card .card-img .description-card-top img {
+	height: 4rem;
+}
+
+@media screen and (max-width: 576px) {
+	article.card .card-img .description-card-top img {
+		font-size: 3rem;
+	}
+}
+
 article.card .card-img .description-card-top span {
 	display: block;
 }
@@ -11211,9 +11221,9 @@ article.card .card-img .description-card-top .description-card-top-category {
 	-webkit-box-pack: baseline;
 	    -ms-flex-pack: baseline;
 	        justify-content: baseline;
-	-webkit-box-align: end;
-	    -ms-flex-align: end;
-	        align-items: flex-end;
+	-webkit-box-align: baseline;
+	    -ms-flex-align: baseline;
+	        align-items: baseline;
 }
 
 article.card .card-img .description-card-top .price-per-person {
@@ -11222,6 +11232,12 @@ article.card .card-img .description-card-top .price-per-person {
 
 article.card .card-img .description-card-top .price-per-person .price {
 	font-size: 2rem;
+}
+
+@media screen and (max-width: 576px) {
+	article.card .card-img .description-card-top .price-per-person .price {
+		font-size: 1rem;
+	}
 }
 
 article.card .card-img .description-card-top .price-per-person .person {

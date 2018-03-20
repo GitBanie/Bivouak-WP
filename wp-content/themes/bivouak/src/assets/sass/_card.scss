@@ -66,21 +66,30 @@ article.card{
       color: white;
       font-weight: 700;
       display: flex;
-      align-items: center;
+      align-items:center;
       justify-content: space-between;
       width: 100%;
+      img{
+        height: 4rem;
+        @media screen and (max-width: 576px) {
+          font-size: 3rem;
+        }
+      }
       span{
         display: block;
       }
       .description-card-top-category {
         display: flex;
         justify-content: baseline;
-        align-items: flex-end;
+        align-items:baseline;
       }
       .price-per-person{
         margin-right: 1rem;
         .price{
           font-size: 2rem;
+          @media screen and (max-width: 576px) {
+            font-size: 1rem;
+          }
         }
         .person {
           margin-top: -0.6rem;
