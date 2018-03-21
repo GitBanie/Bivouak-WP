@@ -3,6 +3,7 @@ section.niveaux{
   padding-top: 3rem;
   h1{
     text-align: right;
+    font-family: $font-title;
     @media screen and (max-width: 991px) {
       text-align: center;
     }

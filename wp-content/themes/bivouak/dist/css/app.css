@@ -11302,7 +11302,6 @@ li {
 }
 
 h1 {
-	font-family: "base02", sans-serif;
 	font-size: 3rem;
 }
 
@@ -11483,6 +11482,7 @@ section.niveaux {
 
 section.niveaux h1 {
 	text-align: right;
+	font-family: "base02", sans-serif;
 }
 
 @media screen and (max-width: 991px) {
@@ -11518,6 +11518,10 @@ section.niveaux .lvl-img {
 section.niveaux .lvl-img .griffe {
 	position: absolute;
 	bottom: -5rem;
+}
+
+section.themes h1 {
+	font-family: "base02", sans-serif;
 }
 
 section.themes figure {
@@ -11578,6 +11582,14 @@ section.themes figure .show {
 	}
 }
 
+section.top-stages h1 {
+	font-family: "base02", sans-serif;
+}
+
+section.top-stages article h1 {
+	font-family: "Nunito Sans", sans-serif;
+}
+
 section.top-stages .top-stages-title {
 	text-align: right;
 	padding-top: 2rem;
@@ -11588,6 +11600,10 @@ section.top-stages .top-stages-title {
 	section.top-stages .top-stages-title {
 		text-align: center;
 	}
+}
+
+section.blog h1 {
+	font-family: "base02", sans-serif;
 }
 
 section.blog article {

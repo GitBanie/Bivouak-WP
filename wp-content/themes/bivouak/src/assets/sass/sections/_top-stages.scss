@@ -1,5 +1,10 @@
 section.top-stages{
-
+h1{
+  font-family: $font-title;
+}
+article h1{
+  font-family: $font-main;
+}
   .top-stages-title{
     text-align: right;
     padding-top: 2rem;
