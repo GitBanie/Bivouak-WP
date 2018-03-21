@@ -21,14 +21,6 @@
     else{
       $(this).next().css('color', '#636561');
     }
-    // $("#menu-menu-header").append('<li class="nav-item"><div class="dropdown show"><a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-fr"></span> FR
-    //              </a>
-    //        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    //          <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb"></span> EN</a>
-    //        </div>
-    //      </div>
-    //    </li>'
-    // );
 
     //show btn figure on over
     $('.figure-theme').on('mouseover', function() {
@@ -58,6 +50,9 @@
       $('html, body').animate({scrollTop: 0}, duration);
       return false;
     });
+
+    //Add icon to number
+    $('#navbarNav ul li:first-child').prepend('<i class="fas fa-phone"></i>').addClass('number-bivoik');
 
   });
 })(jQuery);

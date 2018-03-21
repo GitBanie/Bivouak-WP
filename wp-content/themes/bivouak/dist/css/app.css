@@ -11335,6 +11335,11 @@ header#master-header {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
+	padding-bottom: 10rem;
+}
+
+header#master-header .navbar-toggler {
+	background-color: white;
 }
 
 header#master-header .site-navigation {
@@ -11349,6 +11354,17 @@ header#master-header .site-navigation .tel {
 
 header#master-header .site-navigation .tel a {
 	color: #ebc78f;
+}
+
+header#master-header .number-bivoik {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-line-pack: justify;
+	    align-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 header#master-header .header-logo {
@@ -11371,6 +11387,8 @@ header#master-header .by-Yakaygo img, header#master-header .by-Yakaygo span {
 
 header#master-header #navbarNav {
 	border-bottom: 2px solid #ebc78f;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 991px) {
@@ -11380,9 +11398,24 @@ header#master-header #navbarNav {
 }
 
 header#master-header #navbarNav ul li {
-	margin-right: 1rem;
-	margin-left: 1rem;
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
 	text-transform: uppercase;
+	font-size: 0.9rem;
+}
+
+header#master-header #navbarNav ul li:first-child {
+	color: #ebc78f;
+	margin-left: 1rem;
+}
+
+header#master-header #navbarNav ul li:first-child a {
+	padding-left: 1rem;
+}
+
+header#master-header #navbarNav ul li:first-child a:hover {
+	background-color: transparent;
+	text-decoration: underline;
 }
 
 header#master-header #navbarNav ul li a:hover {
@@ -11602,6 +11635,10 @@ section.top-stages .top-stages-title {
 	}
 }
 
+section.blog {
+	padding-top: 2rem;
+}
+
 section.blog h1 {
 	font-family: "base02", sans-serif;
 }
@@ -11637,7 +11674,7 @@ section.blog article .link {
 .bg-feu {
 	background: url("../img/bg/end-page.jpg") no-repeat center;
 	background-size: cover;
-	height: 1091px;
+	height: 807px;
 	position: relative;
 }
 
@@ -11646,7 +11683,7 @@ section.blog article .link {
 	background-size: cover;
 	position: absolute;
 	bottom: 0;
-	height: 8rem;
+	height: 189px;
 }
 
 footer#master-footer {

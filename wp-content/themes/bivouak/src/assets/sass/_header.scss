@@ -8,11 +8,12 @@ header#master-header{
   margin-left:auto;
   margin-right:auto;
   position: relative;
+  padding-bottom: 10rem;
 
-  .bg-site-branding.container-fluid{
-    // background: rgba(0,0,0,.6);
-    // filter: grayscale(100%);
+  .navbar-toggler {
+      background-color: white;
   }
+
   .site-navigation{
       position: relative;
       .tel{
@@ -23,6 +24,12 @@ header#master-header{
           color: #ebc78f;
         }
       }
+  }
+
+  .number-bivoik{
+    display: flex;
+    align-content: space-between;
+    align-items: center;
   }
 
   .header-logo {
@@ -39,13 +46,27 @@ header#master-header{
 
   #navbarNav{
     border-bottom: 2px solid #ebc78f;
+    flex-wrap: wrap;
+
     @media screen and (max-width: 991px) {
       border: 0;
     }
     ul li{
-      margin-right: 1rem;
-      margin-left: 1rem;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
       text-transform: uppercase;
+      font-size: 0.9rem;
+      &:first-child{
+        color: #ebc78f;
+        margin-left: 1rem;
+        a{
+          padding-left: 1rem;
+          &:hover{
+            background-color: transparent;
+            text-decoration: underline;
+          }
+        }
+      }
       a{
         &:hover{
           background-color: #ebc78f;

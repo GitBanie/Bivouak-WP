@@ -20,7 +20,7 @@
     <div class="col-12 col-lg-4 decouverte">
       <div class="lvl-title text-center">
         <div class="lvl-img">
-          <img src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/lvl.png" class="img-fluid" alt="logo-niveau" title="Niveau découverte">
+          <img src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/lvl-1.png" class="img-fluid" alt="logo-niveau" title="Niveau découverte">
           <img class="griffe img-fluid" src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/griffe-lvl-1.png" alt="griffe-lvl-1">
         </div>
           <h2><small><?php echo esc_html("niveau")?></small> <p><?php echo esc_html( "découverte" ) ?></p></h2>
@@ -30,7 +30,7 @@
     <div class="col-12 col-lg-4 confirme">
       <div class="lvl-title text-center">
         <div class="lvl-img">
-          <img src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/lvl.png" class="img-fluid" alt="logo-niveau" title="Niveau confirmé">
+          <img src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/lvl-2.png" class="img-fluid" alt="logo-niveau" title="Niveau confirmé">
           <img class="griffe img-fluid" src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/griffe-lvl-2.png" alt="griffe-lvl-2">
         </div>
           <h2><small><?php echo esc_html("niveau")?></small> <p><?php echo esc_html("confirmé")?></p></h2>
@@ -40,7 +40,7 @@
     <div class="col-12 col-lg-4 expert">
       <div class="lvl-title text-center">
         <div class="lvl-img">
-          <img src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/lvl.png" class="img-fluid" alt="logo-niveau" title="Niveau expert">
+          <img src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/lvl-3.png" class="img-fluid" alt="logo-niveau" title="Niveau expert">
           <img class="griffe img-fluid" src="<?php echo get_template_directory_uri() ;?>/dist/img/niveaux/griffe-lvl-3.png" alt="griffe-lvl-3">
         </div>
           <h2><small><?php echo esc_html("niveau")?></small> <p><?php echo esc_html( "expert" ) ?></p></h2>
@@ -216,7 +216,7 @@
 </section><!-- /top-stages -->
 
 <section class="blog container">
-  <h1><?php echo get_the_title(get_page_by_title('Blog')); ?></h1>
+  <h1><?php echo esc_html( "Pour aller plus loin" ) ?></h1>
   <?php
         // The Query
         $args = array(

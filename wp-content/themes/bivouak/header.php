@@ -13,7 +13,6 @@
   <div class="wrapper">
     <header class="container-fluid" id="master-header">
       <div class="bg-site-branding container-fluid">
-        <div class="container">
           <div class="site-branding">
             <nav class="site-navigation navbar navbar-expand-lg navbar-light">
               <a class="navbar-brand" href="<?php echo home_url() ?>">
@@ -25,7 +24,7 @@
                   </div>
                 </div>
               </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
               <?php
@@ -41,12 +40,11 @@
                   'walker'          => new WP_Bootstrap_Navwalker()
               ));
               ?>
-              <div class="tel">
+              <!-- <div class="tel">
                 <a href="<?php echo esc_url('tel:09 87 67 09 61') ?>"><?php echo esc_html( "09 87 67 09 61" ) ?></a>
-              </div>
+              </div> -->
               </nav>
             </div><!-- /site-branding -->
-          </div><!-- /container -->
         </div><!-- /container-fluid -->
 
 			<?php if(is_front_page()): ?>
