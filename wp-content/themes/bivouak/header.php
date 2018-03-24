@@ -54,12 +54,11 @@
 	          <p><?php echo esc_html( "Réservez votre stage sélectionné par YAKAYGO, l'expert des activités de plein air" ) ?></p>
 	          <img class="animate-arrow" src="<?php echo get_template_directory_uri() ;?>/dist/img/bg/line-with-arrow.png" alt="fleche de separation">
 	        </div>
-
 	        <div class="search">
-	          <form class="search-form" action="test.html" method="get">
+	          <form class="search-form" role="search" action="<?php echo esc_url(home_url('/'))?>" method="get">
 	            <div class="row">
 	              <div class="col-md i-group">
-	                <input id="searchTextField" class="form-control" placeholder="Entrez un lieu" type="search" name="place">
+	                <input id="searchTextField" class="form-control" placeholder="Entrez un lieu" type="search" name="place" value="<?php the_search_query(); ?>">
 	                <div class="i">
 	                  <i class="fas fa-map-marker-alt"></i>
 	                </div>
