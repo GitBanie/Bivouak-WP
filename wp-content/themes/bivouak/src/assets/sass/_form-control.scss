@@ -2,8 +2,11 @@
 .i-group{
   position: relative;
   padding: 0;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 0.5rem;
+   }
   input, select{
-    padding-left: 40px;
+    padding-left: 34px;
   }
   select{
     appearance: none;
@@ -11,8 +14,8 @@
   }
   .i{
     position: absolute;
-    left: 7%;
-    top: 20%;
+    left: 0.8rem;
+    top: 0.5rem;
     color: #636561;
   }
   .angle-down{
@@ -22,10 +25,3 @@
     color: #636561;
   }
 }
-
-
-// .search input, .search select{
-//   &:focus{
-//     box-shadow: none;
-//   }
-// }

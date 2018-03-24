@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 
   // Name of workflow
   source = './src', // dossier de travail
-  destination = './dist'; // dossier à livrer
+  destination = './dist'; // dossier de production
 
 
 // CSS via Sass and Autoprefixer
@@ -22,8 +22,7 @@ gulp.task('css', function() {
   return gulp.src(source + '/assets/sass/app.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
-      // outputStyle: 'compressed',
-      outputStyle: 'expanded',
+      outputStyle: 'compressed',
       indentType: 'tab',
       indentWidth: '1'
     }).on('error', sass.logError))
@@ -68,8 +67,6 @@ gulp.task('watch', function() {
   gulp.watch(source + '/assets/js/*.js', ['javascript']);
   gulp.watch(source + '/assets/img/*.{png,jpg,gif}', ['img']);
   gulp.watch('./*.html').on('change', browserSync.reload);
-  //Si on veut watcher le css (faire la meme chose pour le js)
-  // gulp.watch(source + "/assets/sass/*.scss", ['css']).on('change', browserSync.reload);
 });
 
 

@@ -10,9 +10,8 @@ li{
 
 //Title
 h1{
-  font-size: $font-size-title; 
+  font-size: $font-size-title;
   @media screen and (max-width: 991px) {
-    // font-size: 2rem;
     text-align: center;
    }
   }
@@ -29,6 +28,7 @@ h1{
   right: 2rem;
   display: none;
   font-size: 3rem;
+  z-index: 100;
   a{
     color: $color-bg-btn-danger;
   }

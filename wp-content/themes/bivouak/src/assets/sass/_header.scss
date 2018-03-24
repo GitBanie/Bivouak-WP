@@ -13,7 +13,6 @@ header#master-header{
   .navbar-toggler {
       background-color: white;
   }
-
   .site-navigation{
       position: relative;
       .tel{
@@ -30,6 +29,7 @@ header#master-header{
     display: flex;
     align-content: space-between;
     align-items: center;
+    justify-content: center;
   }
 
   .header-logo {
@@ -58,9 +58,10 @@ header#master-header{
       font-size: 0.9rem;
       &:first-child{
         color: #ebc78f;
-        margin-left: 1rem;
+        margin-left: 2rem;
         a{
           padding-left: 1rem;
+          margin-right: 1rem;
           &:hover{
             background-color: transparent;
             text-decoration: underline;
