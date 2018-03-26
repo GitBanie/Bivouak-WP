@@ -174,17 +174,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  require get_template_directory() . '/inc/bivouak_functions.php';
 
 /**
- * Add custom post type stage
+ * Ajout d'un custom post type stage
  */
   require get_template_directory() . '/types/bivouak_stage.php';
 
  /**
-  * Add custom post type survivant
+  * Ajout d'un custom post type moniteur
   */
   require get_template_directory() . '/types/bivouak_moniteur.php';
 
 	/**
-	 * Add taxonomy for the custom post type stage
+	 * Ajout de taxonomy pour le custom post type stage
 	 */
 
 	require get_template_directory() . '/types/bivouak_taxonomy.php';

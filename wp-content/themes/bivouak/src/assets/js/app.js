@@ -1,28 +1,19 @@
-//Evite les conflits (effet de bord), on passe en référence l'objet jQuery
+// Evite les conflits (effet de bord), on passe en référence l'objet jQuery
 (function($){
   $(function() {
   // DOM ready!
 
-    //Enable tooltip
-    $('[data-toggle="tooltip"]').tooltip();
-
-    //Change color on change
+    // Change la couleur des font icon
     $('.search-form').on('change', '.form-control', function() {
       $(this).next().css('color', '#e9511f');
+      // Stop l'animation de la fleche
       $('.animate-arrow').css("animation", "none");
-
       if($(this).val() == ""){
         $(this).next().css('color', '#636561');
       }
     });
-    if($('#searchTextField').val() == ""){
-      $(this).next().css('color', '#e9511f');
-    }
-    else{
-      $(this).next().css('color', '#636561');
-    }
 
-    //show btn figure on over
+    // Affiche le boutton en hover des figures de la section themes
     $('.figure-theme').on('mouseover', function() {
       $(this).children('.show').show();
       $(this).children('.figure-img').css('filter', 'grayscale(100%)');
@@ -32,26 +23,26 @@
       $(this).children('.figure-img').css('filter', 'grayscale(0%)');
     });
 
-    //Retour haut de page
+    // Retour haut de page
     var duration = 500;
-    $(window).scroll(function() {
+    var classRetour = '.cRetour';
+    $(window).on('scroll', function() {
       if ($(this).scrollTop() > 100) {
-        // Si un défillement de 100 pixels ou plus.
+        // Si un défillement de 100 pixels ou plus
         // Ajoute le bouton
-        $('.cRetour').fadeIn(duration);
+        $(classRetour).fadeIn(duration);
       } else {
         // Sinon enlève le bouton
-        $('.cRetour').fadeOut(duration);
+        $(classRetour).fadeOut(duration);
       }
     });
-    $('.cRetour').click(function(event) {
-      // Un clic provoque le retour en haut animé.
-      event.preventDefault();
-      $('html, body').animate({scrollTop: 0}, duration);
-      return false;
+    $(classRetour).on('click', function() {
+      // Un clic provoque le retour en haut animé
+      $('html').animate({scrollTop: 0}, duration);
+      return false; 
     });
 
-    //Add icon to number
+    // Ajout du font icon au numéro de téléphone
     $('#navbarNav ul li:first-child').prepend('<i class="fas fa-phone"></i>').addClass('number-bivoik');
 
   });

@@ -40,9 +40,6 @@
                   'walker'          => new WP_Bootstrap_Navwalker()
               ));
               ?>
-              <!-- <div class="tel">
-                <a href="<?php echo esc_url('tel:09 87 67 09 61') ?>"><?php echo esc_html( "09 87 67 09 61" ) ?></a>
-              </div> -->
               </nav>
             </div><!-- /site-branding -->
         </div><!-- /container-fluid -->
