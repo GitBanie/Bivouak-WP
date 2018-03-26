@@ -7,12 +7,7 @@ section.themes{
     margin: 0 -0.8rem -0.3rem;
     filter: grayscale(0);
     transition: 0s ease-in-out;
-    &:hover{
-      // filter: grayscale(100%);
-    }
-    .btn-danger:hover {
-      // background-color: #636162;
-    }
+
     figcaption{
       position: absolute;
       bottom: 0.5rem;
