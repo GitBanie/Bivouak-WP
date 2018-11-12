@@ -62,7 +62,7 @@
 					<li><a href="<?php echo esc_url("https://www.linkedin.com/company/11088923/")?>" target="_blank" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
 				</ul>
 				<div class="newsletter">
-					<p><?php echo esc_html("Inscrivez vous à notre Newsletter")?></p>
+					<p><?php echo esc_html("Inscrivez-vous à notre Newsletter")?></p>
 					<div class="newsletter-content">
 						<?php get_sidebar() ?>
 					</div>

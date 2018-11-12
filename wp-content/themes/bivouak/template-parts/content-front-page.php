@@ -35,7 +35,7 @@
         </div>
           <h2><small><?php echo esc_html("niveau")?></small> <p><?php echo esc_html("confirmé")?></p></h2>
       </div>
-      <p><?php echo esc_html( "La survie, vous en avez déjà entendu parlé, peut être même que vous êtes renseigné sur le sujet. Vous êtes un randonneur aguerri et si vous chercher à repousser vos limites, vous êtes au bon endroit." )?></p>
+      <p><?php echo esc_html( "La survie, vous en avez déjà entendu parler, peut-être même que vous êtes renseigné sur le sujet. Vous êtes un randonneur aguerri et si vous chercher à repousser vos limites, vous êtes au bon endroit." )?></p>
     </div><!-- /confirme -->
     <div class="col-12 col-lg-4 expert">
       <div class="lvl-title text-center">
@@ -45,7 +45,7 @@
         </div>
           <h2><small><?php echo esc_html("niveau")?></small> <p><?php echo esc_html( "expert" ) ?></p></h2>
       </div>
-      <p><?php echo esc_html( "Vous êtes ici par passion, vous connaissez la survie sur le bout des doigts. Pas besoin d'en dire d'avantage, votre sac est déjà prêt." ) ?></p>
+      <p><?php echo esc_html( "Vous êtes ici par passion, vous connaissez la survie sur le bout des doigts. Pas besoin d'en dire davantage, votre sac est déjà prêt." ) ?></p>
     </div><!-- /expert -->
   </div>
 </section><!-- /niveau -->

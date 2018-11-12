@@ -35,7 +35,7 @@
                   'container_id'    => 'navbarNav',
                   'container_class' => 'collapse navbar-collapse',
                   'items_wrap'      => my_nav_wrap(),
-                  'menu_class'      => 'nav navbar-nav ml-auto',
+                  'menu_class'      => 'nav navbar-nav m-auto',
                   'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                   'walker'          => new WP_Bootstrap_Navwalker()
               ));
@@ -47,7 +47,7 @@
 			<?php if(is_front_page()): ?>
       	<div class="container">
 	        <div class="site-title">
-	          <h1><?php echo esc_html( 'Reveillez votre instinct de survie' ) ?></h1>
+	          <h1><?php echo esc_html( 'Réveillez votre instinct de survie' ) ?></h1>
 	          <p><?php echo esc_html( "Réservez votre stage sélectionné par YAKAYGO, l'expert des activités de plein air" ) ?></p>
 	          <img class="animate-arrow" src="<?php echo get_template_directory_uri() ;?>/dist/img/bg/line-with-arrow.png" alt="fleche de separation">
 	        </div>
