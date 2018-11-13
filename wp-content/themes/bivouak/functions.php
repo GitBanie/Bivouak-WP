@@ -44,7 +44,7 @@ if ( ! function_exists( 'bivouak_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'bivouak' ),
+			'menu-header' => esc_html__( 'Primary', 'bivouak' ),
 		) );
 
 		/*
@@ -105,7 +105,7 @@ add_action( 'after_setup_theme', 'bivouak_content_width', 0 );
  */
 function bivouak_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'bivouak' ),
+		'name'          => esc_html__( 'Sidebar Footer', 'bivouak' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'bivouak' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -120,7 +120,15 @@ add_action( 'widgets_init', 'bivouak_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bivouak_scripts() {
-	wp_enqueue_style( 'bivouak-style', get_stylesheet_uri() );
+
+	//Ajout du css
+	wp_enqueue_style( 'bivouak-style', get_template_directory_uri() . '/dist/css/app.css' );
+
+	//JS pour autocomplete de google
+	wp_enqueue_script( 'bivouak-google-autocomplete', 'http://maps.googleapis.com/maps/api/js?key=AIzaSyDbqz4_lYYofB_qRGUi9EB_H9W0pvrF8qI&libraries=places&amp;sensor=false', array(), '20151215', true );
+
+	//Ajout du js
+	wp_enqueue_script( 'bivouak-script', get_template_directory_uri() . '/dist/js/app.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bivouak-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -159,3 +167,35 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Custom functions
+ */
+
+ require get_template_directory() . '/inc/bivouak_functions.php';
+
+/**
+ * Ajout d'un custom post type stage
+ */
+  require get_template_directory() . '/types/bivouak_stage.php';
+
+ /**
+  * Ajout d'un custom post type moniteur
+  */
+  require get_template_directory() . '/types/bivouak_moniteur.php';
+
+	/**
+	 * Ajout de taxonomy pour le custom post type stage
+	 */
+
+	require get_template_directory() . '/types/bivouak_taxonomy.php';
+
+	/**
+	 * Register google API key
+	 */
+
+	require get_template_directory() . '/inc/bivouak_maps.php';
+
+	/**
+	 * Register bootstrap nav
+	 */
+  require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';

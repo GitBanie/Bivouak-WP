@@ -1,0 +1,27 @@
+
+.i-group{
+  position: relative;
+  padding: 0;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 0.5rem;
+   }
+  input, select{
+    padding-left: 34px;
+  }
+  select{
+    appearance: none;
+    cursor: pointer;
+  }
+  .i{
+    position: absolute;
+    left: 0.8rem;
+    top: 0.5rem;
+    color: #636561;
+  }
+  .angle-down{
+    position: absolute;
+    right: 7%;
+    top: 20%;
+    color: #636561;
+  }
+}

@@ -1,0 +1,35 @@
+
+body{
+  font-family: $font-main;
+  overflow-x:hidden;
+}
+
+li{
+  list-style: none;
+}
+
+//Title
+h1{
+  font-size: $font-size-title;
+  @media screen and (max-width: 991px) {
+    text-align: center;
+   }
+  }
+
+  .niveaux, .themes, .top-stages, .blog{
+    h1{
+      letter-spacing: 0.5rem;
+    }
+  }
+
+.cRetour{
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  display: none;
+  font-size: 3rem;
+  z-index: 100;
+  a{
+    color: $color-bg-btn-danger;
+  }
+}

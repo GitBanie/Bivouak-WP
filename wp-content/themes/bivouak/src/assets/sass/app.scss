@@ -1,0 +1,36 @@
+//Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+//flags
+@import 'node_modules/flag-icon-css/sass/flag-icon';
+
+//variables
+@import 'variables';
+
+//font
+@import 'fonts';
+
+//button
+@import 'btn';
+
+//cards
+@import 'card';
+
+//form component
+@import 'form-control';
+
+//Global
+@import 'global';
+
+//header
+@import 'header';
+
+//Sections
+  @import 'sections/concept';
+  @import 'sections/niveaux';
+  @import 'sections/themes';
+  @import 'sections/top-stages';
+  @import 'sections/blog';
+
+//footer
+@import 'footer';

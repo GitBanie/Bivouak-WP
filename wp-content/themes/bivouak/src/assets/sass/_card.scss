@@ -1,0 +1,118 @@
+article.card{
+
+  border: 2px solid $color-bg-btn-danger !important;
+  border-radius: 0.6rem;
+
+  &:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+    opacity: .9;
+  }
+
+  h1{
+    font-family: $font-main;
+    font-size: 1.57rem;
+    color:$color-bg-btn-danger;
+    font-weight: 800;
+    letter-spacing: normal;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+  .card-survivant{
+    position: absolute;
+    left: 1rem;
+    bottom: -1rem;
+    figure{
+      position: relative;
+      img{
+        border-radius: 50%;
+        border:2px solid white;
+        width: 100px;
+        height: 100px;
+      }
+      figcaption{
+        position: absolute;
+        bottom: 2.5rem;
+        color: white;
+        font-weight: 700;
+        left: 6.5rem;
+      }
+    }
+  }
+
+  .rating{
+    color:$color-bg-btn-danger;
+    display: flex;
+    @media screen and (max-width: 991px) {
+      justify-content: center;
+    }
+    ul{
+      display: contents;
+    }
+    span{
+      margin-left: 1rem;
+    }
+  }
+
+  .card-img{
+    position: relative;
+    .description-card-top{
+      position: absolute;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-top-left-radius: 0.4rem;
+      border-top-right-radius: 0.4rem;
+      color: white;
+      font-weight: 700;
+      display: flex;
+      align-items:center;
+      justify-content: space-between;
+      width: 100%;
+      img{
+        height: 4rem;
+        @media screen and (max-width: 576px) {
+          font-size: 3rem;
+        }
+      }
+      span{
+        display: block;
+      }
+      .description-card-top-category {
+        display: flex;
+        justify-content: baseline;
+        align-items:baseline;
+      }
+      .price-per-person{
+        margin-right: 1rem;
+        .price{
+          font-size: 2rem;
+          @media screen and (max-width: 576px) {
+            font-size: 1rem;
+          }
+        }
+        .person {
+          margin-top: -0.6rem;
+        }
+      }
+    }
+  }
+
+  .card-text{
+    padding-top: 1rem;
+    color: #737373;
+  }
+
+  .card-footer{
+    background-color: $color-bg-btn-danger;
+    text-align: center;
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    small{
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+  }
+
+}

@@ -1,0 +1,38 @@
+section.niveaux{
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  h1{
+    text-align: right;
+    font-family: $font-title;
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+  }
+  h2, small{
+    font-weight: 800;
+  }
+  small{
+    font-size: 2rem;
+    position: relative;
+    bottom: -1.2rem;
+  }
+  h2{
+    font-size: 3.3rem;
+    text-align: left;
+  }
+
+  img{
+    position: relative;
+    bottom: -4.5rem;
+  }
+  .lvl-img{
+    position: relative;
+    .griffe{
+      position: absolute;
+      bottom: -5rem;
+    }
+  }
+
+
+
+}

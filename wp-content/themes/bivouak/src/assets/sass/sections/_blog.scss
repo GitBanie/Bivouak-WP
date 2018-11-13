@@ -1,0 +1,26 @@
+section.blog{
+    padding-top: 2rem;
+  h1{
+    font-family: $font-title;
+  }
+  article{
+    padding-top: 1rem;
+    img{
+      transform: scale(1.1);
+      transition: .3s ease-in-out;
+      &:hover{
+         transform: scale(1);
+      }
+    }
+    h1{
+      font-family: $font-main;
+      font-weight: 700;
+      font-size: 2rem;
+      padding-top: 2rem;
+      letter-spacing: normal;
+    }
+    .link{
+      text-align: center;
+    }
+  }
+}
