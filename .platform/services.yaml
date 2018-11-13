@@ -1,7 +1,3 @@
-  database:
-    -
-        username: root
-        scheme: mysql
-        service: mysqldb
-        rel: mysql
-        password: root
+mydatabase:
+    type: mysql:10.0
+    disk: 1024
